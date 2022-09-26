@@ -17,6 +17,7 @@
         "args": [
           {
             "label": "Entity",
+            "name": "entity",
             "type": "entity"
           }
         ]

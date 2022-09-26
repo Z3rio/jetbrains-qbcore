@@ -39,14 +39,28 @@ for (let i = 0; i < data.length; i++) {
     const currentFunction = currentSection.list[i2];
 
     // Create usage string
-    var usage = currentSection.prefix + currentFunction.name;
-    var func = "function " + currentSection.prefix + currentFunction.name;
+    let usage = currentSection.prefix + currentFunction.name;
+    let func = "function " + currentSection.prefix + currentFunction.name;
     if (currentFunction.args == undefined || currentFunction.args.length == 0) {
       usage += "()";
       func += "() end";
     } else {
-      usage = `${currentFunction.returns} ${usage}(`;
-      func += "(";
+      // Generate arguement strings
+      let args = "";
+      let args2 = "";
+
+      for (let i3 = 0; i3 < currentFunction.args.length; i3++) {
+        const arg = currentFunction.args[i3];
+        if (i3 !== 0) {
+          args += ", ";
+          args2 += ", ";
+        }
+        args += arg.name;
+        args2 += arg.type + " " + arg.label;
+      }
+
+      usage = `${currentFunction.returns} ${usage}(${args2})`;
+      func += "(" + args + ")";
     }
 
     // Create actual function instruction string
