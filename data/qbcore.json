@@ -3,6 +3,28 @@
   "functions": [
     {
       "name": "ClientFunctions",
+      "prefix": "QBCore.",
+      "list": [
+        {
+          "name": "Debug",
+          "descriptions": "Does a debug print for a specific resource",
+          "args": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            },
+            {
+              "label": "Indent",
+              "name": "indent",
+              "type": "BOOLEAN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ClientFunctions2",
       "prefix": "QBCore.Functions.",
       "list": [
         {
@@ -20,6 +42,212 @@
               "label": "Entity",
               "name": "entity",
               "type": "entity"
+            }
+          ]
+        },
+        {
+          "name": "HasItem",
+          "description": "Checks if the player has an item",
+          "returns": "BOOL",
+          "args": [
+            {
+              "label": "Items",
+              "name": "items",
+              "type": "ARRAY"
+            },
+            {
+              "label": "Amounts",
+              "name": "amounts",
+              "type": "ARRAY"
+            }
+          ]
+        },
+        {
+          "name": "DrawText",
+          "description": "Draws a 2d text on the players screen",
+          "args": [
+            {
+              "label": "X",
+              "name": "x",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Y",
+              "name": "y",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Width",
+              "name": "width",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Height",
+              "name": "height",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Scale",
+              "name": "scale",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Red",
+              "name": "red",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Green",
+              "name": "g",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Blue",
+              "name": "b",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Alpha",
+              "name": "a",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "DrawText3D",
+          "description": "Draws a 3d text on the players screen",
+          "args": [
+            {
+              "label": "X",
+              "name": "x",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Y",
+              "name": "y",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Z",
+              "name": "z",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "RequestAnimDict",
+          "description": "Loads an animation dictionary",
+          "args": [
+            {
+              "label": "AnimDict",
+              "name": "animdict",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "LoadModel",
+          "description": "Loads a model",
+          "args": [
+            {
+              "label": "Model",
+              "name": "model",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "LoadAnimSet",
+          "description": "Loads an animation set",
+          "args": [
+            {
+              "label": "AnimSet",
+              "name": "animset",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "Notify",
+          "description": "Displays an notification on the players screen",
+          "args": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            },
+            {
+              "label": "Type",
+              "name": "type",
+              "type": "STRING"
+            },
+            {
+              "label": "Length",
+              "name": "length",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "CreateClientCallback",
+          "description": "Creates a client",
+          "args": [
+            {
+              "label": "Name",
+              "name": "name",
+              "type": "STRING"
+            },
+            {
+              "label": "Function",
+              "name": "function",
+              "type": "FUNCTION"
+            }
+          ]
+        },
+        {
+          "name": "TriggerClientCallback",
+          "description": "Trigger a client callback",
+          "args": [
+            {
+              "label": "Name",
+              "name": "name",
+              "type": "STRING"
+            },
+            {
+              "label": "Callback",
+              "name": "callback",
+              "type": "FUNCTION"
+            }
+          ]
+        },
+        {
+          "name": "TriggerCallback",
+          "description": "Trigger a server callback",
+          "args": [
+            {
+              "label": "Name",
+              "name": "name",
+              "type": "STRING"
+            },
+            {
+              "label": "Callback",
+              "name": "callback",
+              "type": "FUNCTION"
+            },
+            {
+              "label": "Args",
+              "name": "args",
+              "type": "ANY"
             }
           ]
         }
