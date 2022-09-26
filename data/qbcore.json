@@ -2,11 +2,11 @@
   {
     "name": "ClientFunctions",
     "list": {
-      "QBCore.Functions.GetPlayerData": {
+      [
         "description": "Get the player data",
         "return": "PlayerData",
         "args": []
-      }
+      ]
     }
   }
 ]
