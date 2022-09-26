@@ -1,5 +1,5 @@
 {
-  "imports": "QBCore = {}\nQBCore.Functions = {}",
+  "imports": "QBCore = {}\nQBCore.Functions = {}\nQBCore.Shared = {}",
   "functions": [
     {
       "name": "ClientFunctions",
@@ -7,7 +7,7 @@
       "list": [
         {
           "name": "Debug",
-          "descriptions": "Does a debug print for a specific resource",
+          "description": "Does a debug print for a specific resource",
           "args": [
             {
               "label": "Text",
@@ -41,7 +41,7 @@
             {
               "label": "Entity",
               "name": "entity",
-              "type": "entity"
+              "type": "ENTITY"
             }
           ]
         },
@@ -248,6 +248,1222 @@
               "label": "Args",
               "name": "args",
               "type": "ANY"
+            }
+          ]
+        },
+        {
+          "name": "Progressbar",
+          "description": "Trigger a progressbar for the player",
+          "args": [
+            {
+              "label": "Name",
+              "name": "name",
+              "type": "STRING"
+            },
+            {
+              "label": "Label",
+              "name": "label",
+              "type": "STRING"
+            },
+            {
+              "label": "Duration",
+              "name": "duration",
+              "type": "NUMBER"
+            },
+            {
+              "label": "UseWhileDead",
+              "name": "usewhiledead",
+              "type": "BOOLEAN"
+            },
+            {
+              "label": "CanCancel",
+              "name": "cancancel",
+              "type": "BOOLEAN"
+            },
+            {
+              "label": "DisableControls",
+              "name": "disablecontrols",
+              "type": "BOOLEAN"
+            },
+            {
+              "label": "Animation",
+              "name": "animation",
+              "type": "ARRAY"
+            },
+            {
+              "label": "Prop",
+              "name": "prop",
+              "type": "ARRAY"
+            },
+            {
+              "label": "PropTwo",
+              "name": "proptwo",
+              "type": "ARRAY"
+            },
+            {
+              "label": "OnFinish",
+              "name": "onfinish",
+              "type": "FUNCTION"
+            },
+            {
+              "label": "OnCancel",
+              "name": "oncancel",
+              "type": "FUNCTION"
+            }
+          ]
+        },
+        {
+          "name": "GetVehicles",
+          "description": "Get all the vehicles in the game",
+          "returns": "ARRAY",
+          "args": []
+        },
+        {
+          "name": "GetObjects",
+          "description": "Get all the objects in the game",
+          "returns": "ARRAY",
+          "args": []
+        },
+        {
+          "name": "GetPlayers",
+          "description": "Get all the players in the game",
+          "returns": "ARRAY",
+          "args": []
+        },
+        {
+          "name": "GetPeds",
+          "description": "Get all the peds in the game",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "IgnoreList",
+              "name": "ignorelist",
+              "type": "ARRAY"
+            }
+          ]
+        },
+        {
+          "name": "GetClosestPed",
+          "description": "Gets the closest ped to the local player",
+          "returns": "ENTITY",
+          "args": [
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            },
+            {
+              "label": "IgnoreList",
+              "name": "ignorelist",
+              "type": "ARRAY"
+            }
+          ]
+        },
+        {
+          "name": "IsWearingGloves",
+          "description": "Returns if the player is wearing gloves",
+          "returns": "BOOLEAN",
+          "args": []
+        },
+        {
+          "name": "GetClosestPlayer",
+          "description": "Gets the closest player to the local player",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            }
+          ]
+        },
+        {
+          "name": "GetPlayersFromCoords",
+          "description": "Gets the players inside of a radius at the chosen coords",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            },
+            {
+              "label": "Distance",
+              "name": "distance",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "GetClosestVehicle",
+          "description": "Gets the closest vehicle to the local player",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            }
+          ]
+        },
+        {
+          "name": "GetClosestObject",
+          "description": "Gets the closest object to the local player",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            }
+          ]
+        },
+        {
+          "name": "GetClosestBone",
+          "description": "Gets the closest bone from a list in the chosen entity",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "Entity",
+              "name": "entity",
+              "type": "ENTITY"
+            },
+            {
+              "label": "List",
+              "name": "list",
+              "type": "ARRAY"
+            }
+          ]
+        },
+        {
+          "name": "GetBoneDistance",
+          "description": "Gets the distance between the chosen bone of the chosen entity and the local player",
+          "returns": "NUMBER",
+          "args": [
+            {
+              "label": "Entity",
+              "name": "entity",
+              "type": "ENTITY"
+            },
+            {
+              "label": "BoneType",
+              "name": "bonetype",
+              "type": "NUMBER"
+            },
+            {
+              "label": "BoneIndex",
+              "name": "boneindex",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "AttachProp",
+          "description": "Attaches a prop to the chosen entity",
+          "returns": "ENTITY",
+          "args": [
+            {
+              "label": "Entity",
+              "name": "entity",
+              "type": "ENTITY"
+            },
+            {
+              "label": "Model",
+              "name": "model",
+              "type": "STRING"
+            },
+            {
+              "label": "BoneIndex",
+              "name": "boneindex",
+              "type": "NUMBER"
+            },
+            {
+              "label": "X",
+              "name": "x",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Y",
+              "name": "y",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Z",
+              "name": "z",
+              "type": "NUMBER"
+            },
+            {
+              "label": "XR",
+              "name": "xr",
+              "type": "NUMBER"
+            },
+            {
+              "label": "YR",
+              "name": "yr",
+              "type": "NUMBER"
+            },
+            {
+              "label": "ZR",
+              "name": "zr",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Vertex",
+              "name": "vertex",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "SpawnVehicle",
+          "description": "Spawns a vehicle and returns the vehicle through the callback function",
+          "args": [
+            {
+              "label": "Model",
+              "name": "model",
+              "type": "STRING"
+            },
+            {
+              "label": "Callback",
+              "name": "callback",
+              "type": "FUNCTION"
+            },
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "FUNCTION"
+            },
+            {
+              "label": "IsNetworked",
+              "name": "isnetworked",
+              "type": "BOOLEAN"
+            },
+            {
+              "label": "TeleportInto",
+              "name": "teleportinto",
+              "type": "BOOLEAN"
+            }
+          ]
+        },
+        {
+          "name": "DeleteVehicle",
+          "description": "Deletes the given vehicle",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            }
+          ]
+        },
+        {
+          "name": "GetPlate",
+          "description": "Gets the plate of the given vehicle",
+          "returns": "STRING",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            }
+          ]
+        },
+        {
+          "name": "GetVehicleLabel",
+          "description": "Gets the label of the given vehicle",
+          "returns": "STRING",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            }
+          ]
+        },
+        {
+          "name": "SpawnClear",
+          "description": "Checks if the given spawn location is clear of vehicles",
+          "returns": "BOOLEAN",
+          "args": [
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            },
+            {
+              "label": "Radius",
+              "name": "radius",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "GetVehicleProperties",
+          "description": "Returns the properties of a vehicle",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            }
+          ]
+        },
+        {
+          "name": "SetVehicleProperties",
+          "description": "Sets the properties of a vehicle",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            },
+            {
+              "label": "Properties",
+              "name": "properties",
+              "type": "ARRAY"
+            }
+          ]
+        },
+        {
+          "name": "LoadParticleDictionary",
+          "description": "Loads a particle dictionary",
+          "args": [
+            {
+              "label": "Dictionary",
+              "name": "dictionary",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "StartParticleAtCoord",
+          "description": "Creates particles at a coordinate",
+          "args": [
+            {
+              "label": "Dictionary",
+              "name": "dictionary",
+              "type": "STRING"
+            },
+            {
+              "label": "ParticleName",
+              "name": "particlename",
+              "type": "STRING"
+            },
+            {
+              "label": "Looped",
+              "name": "looped",
+              "type": "BOOLEAN"
+            },
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            },
+            {
+              "label": "Rotation",
+              "name": "rotation",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Scale",
+              "name": "scale",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Opacity",
+              "name": "opacity",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Color",
+              "name": "color",
+              "type": "ARRAY"
+            },
+            {
+              "label": "Duration",
+              "name": "duration",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "StartParticleOnEntity",
+          "description": "Creates particles for an entity",
+          "args": [
+            {
+              "label": "Dictionary",
+              "name": "dictionary",
+              "type": "STRING"
+            },
+            {
+              "label": "ParticleName",
+              "name": "particlename",
+              "type": "STRING"
+            },
+            {
+              "label": "Looped",
+              "name": "looped",
+              "type": "BOOLEAN"
+            },
+            {
+              "label": "Entity",
+              "name": "entity",
+              "type": "ENTITY"
+            },
+            {
+              "label": "Bone",
+              "name": "bone",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Offset",
+              "name": "offset",
+              "type": "ARRAY"
+            },
+            {
+              "label": "Rotation",
+              "name": "rotation",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Scale",
+              "name": "scale",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Opacity",
+              "name": "opacity",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Color",
+              "name": "color",
+              "type": "ARRAY"
+            },
+            {
+              "label": "Evolution",
+              "name": "evolution",
+              "type": "ARRAY"
+            },
+            {
+              "label": "Duration",
+              "name": "duration",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "GetStreetNametAtCoords",
+          "description": "Gets the street name for given coordinates",
+          "returns": "STRING",
+          "args": [
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            }
+          ]
+        },
+        {
+          "name": "GetCardinalDirection",
+          "description": "Returns North, West, South or East depending on the entities heading",
+          "returns": "STRING",
+          "args": [
+            {
+              "label": "Entity",
+              "name": "entity",
+              "type": "ENTITY"
+            }
+          ]
+        },
+        {
+          "name": "GetCurrentTime",
+          "description": "Gets the current ingame time as a formatted string",
+          "returns": "STRING",
+          "args": []
+        },
+        {
+          "name": "GetGroundZCoord",
+          "description": "Returns the ground Z coordinate for the given coordinates",
+          "returns": "VECTOR3",
+          "args": [
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SharedFunctions",
+      "prefix": "QBCore.Shared.",
+      "list": [
+        {
+          "name": "RandomStr",
+          "returns": "STRING",
+          "description": "Returns a random string from the given length",
+          "args": [
+            {
+              "label": "Length",
+              "name": "length",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "RandomInt",
+          "returns": "NUMBER",
+          "description": "Returns a random number from the given length",
+          "args": [
+            {
+              "label": "Length",
+              "name": "length",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "SplitStr",
+          "description": "Splits a string",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            },
+            {
+              "label": "Delimiter",
+              "name": "delimiter",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "Trim",
+          "returns": "STRING",
+          "description": "Returns the string but without special characters",
+          "args": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "FirstToUpper",
+          "returns": "STRING",
+          "description": "Makes the first letter in the string uppercase",
+          "args": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "Round",
+          "returns": "NUMBER",
+          "description": "Returns a rounded version of the given number with the given amount of decimals",
+          "args": [
+            {
+              "label": "Number",
+              "name": "number",
+              "type": "NUMBER"
+            },
+            {
+              "label": "DecimalAmount",
+              "name": "decimalamount",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "ChangeVehicleExtra",
+          "description": "Changes the extra value of a vehicle",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            },
+            {
+              "label": "Extra",
+              "name": "extra",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Toggled",
+              "name": "toggled",
+              "type": "BOOLEAN"
+            }
+          ]
+        },
+        {
+          "name": "SetDefaultVehicleExtras",
+          "description": "Sets all the vehicle extras back to default",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            },
+            {
+              "label": "Config",
+              "name": "config",
+              "type": "ARRAY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ServerFunctions",
+      "prefix": "QBCore.Functions.",
+      "list": [
+        {
+          "name": "GetCoords",
+          "returns": "VECTOR4",
+          "description": "Returns the coords and heading of a given entity",
+          "args": [
+            {
+              "label": "Entity",
+              "name": "entity",
+              "type": "ENTITY"
+            }
+          ]
+        },
+        {
+          "name": "GetIdentifier",
+          "returns": "STRING",
+          "description": "Returns the identifier from a player",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "IdType",
+              "name": "idtype",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "GetSource",
+          "returns": "NUMBER",
+          "description": "Returns the source from a players identifier",
+          "args": [
+            {
+              "label": "Identifier",
+              "name": "identifier",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "GetPlayer",
+          "returns": "ARRAY",
+          "description": "Returns the player object for the given source",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "GetPlayerByCitizenId",
+          "returns": "ARRAY",
+          "description": "Returns the player object for the given citizenid",
+          "args": [
+            {
+              "label": "CitizenId",
+              "name": "citizenid",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "GetOfflinePlayerByCitizenId",
+          "returns": "ARRAY",
+          "description": "Returns the player object for an offline player with the given citizen id",
+          "args": [
+            {
+              "label": "CitizenId",
+              "name": "citizenid",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "GetPlayerByPhone",
+          "returns": "ARRAY",
+          "description": "Returns the player object for the given phone number",
+          "args": [
+            {
+              "label": "PhoneNumber",
+              "name": "phonenumber",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "GetPlayers",
+          "returns": "ARRAY",
+          "description": "Returns the sources of all the active players",
+          "args": []
+        },
+        {
+          "name": "GetQBPlayers",
+          "returns": "ARRAY",
+          "description": "Returns the player objects of all the active players",
+          "args": []
+        },
+        {
+          "name": "GetPlayersOnDuty",
+          "returns": "ARRAY",
+          "description": "Returns the players and player amount which are currently on duty for the given job",
+          "args": [
+            {
+              "label": "Job",
+              "name": "job",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "GetDutyCount",
+          "returns": "NUMBER",
+          "description": "Returns the amount of the players which are currently on duty for the given job",
+          "args": [
+            {
+              "label": "Job",
+              "name": "job",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "GetBucketObjects",
+          "returns": "ARRAY",
+          "description": "Returns QBCore's routing and entity buckets",
+          "args": []
+        },
+        {
+          "name": "SetPlayerBucket",
+          "returns": "BOOLEAN",
+          "description": "Updates the routing bucket for the player with the given source",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Bucket",
+              "name": "bucket",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "SetEntityBucket",
+          "returns": "BOOLEAN",
+          "description": "Updates the routing bucket for the given entity",
+          "args": [
+            {
+              "label": "Entity",
+              "name": "entity",
+              "type": "ENTITY"
+            },
+            {
+              "label": "Bucket",
+              "name": "bucket",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "GetPlayersInBucket",
+          "returns": "ARRAY",
+          "description": "Returns the players of the given routing bucket",
+          "args": [
+            {
+              "label": "Bucket",
+              "name": "bucket",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "GetEntitiesInBucket",
+          "returns": "ARRAY",
+          "description": "Returns the entities of the given routing bucket",
+          "args": [
+            {
+              "label": "Bucket",
+              "name": "bucket",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "SpawnVehicle",
+          "description": "Spawns a vehicle with the given model at the given position",
+          "returns": "ENTITY",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Model",
+              "name": "model",
+              "type": "STRING"
+            },
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            },
+            {
+              "label": "Warp",
+              "name": "warp",
+              "type": "BOOLEAN"
+            }
+          ]
+        },
+        {
+          "name": "CreateVehicle",
+          "description": "Creates a vehicle with the given model at the given position",
+          "returns": "ENTITY",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Model",
+              "name": "model",
+              "type": "STRING"
+            },
+            {
+              "label": "Coords",
+              "name": "coords",
+              "type": "VECTOR3"
+            },
+            {
+              "label": "Warp",
+              "name": "warp",
+              "type": "BOOLEAN"
+            }
+          ]
+        },
+        {
+          "name": "TriggerClientCallback",
+          "description": "Triggers a client callback",
+          "args": [
+            {
+              "label": "Name",
+              "name": "name",
+              "type": "STRING"
+            },
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Callback",
+              "name": "callback",
+              "type": "FUNCTION"
+            },
+            {
+              "label": "Args",
+              "name": "args",
+              "type": "ANY"
+            }
+          ]
+        },
+        {
+          "name": "CreateCallback",
+          "description": "Creates a server callback",
+          "args": [
+            {
+              "label": "Name",
+              "name": "name",
+              "type": "STRING"
+            },
+            {
+              "label": "Callback",
+              "name": "callback",
+              "type": "FUNCTION"
+            }
+          ]
+        },
+        {
+          "name": "TriggerCallback",
+          "description": "Trigger a server callback",
+          "args": [
+            {
+              "label": "Name",
+              "name": "name",
+              "type": "STRING"
+            },
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Callback",
+              "name": "callback",
+              "type": "FUNCTION"
+            },
+            {
+              "label": "Args",
+              "name": "args",
+              "type": "ANY"
+            }
+          ]
+        },
+        {
+          "name": "CreateUseableItem",
+          "description": "Creates an useable item",
+          "args": [
+            {
+              "label": "Item",
+              "name": "item",
+              "type": "STRING"
+            },
+            {
+              "label": "Data",
+              "name": "data",
+              "type": "ARRAY"
+            }
+          ]
+        },
+        {
+          "name": "CanUseItem",
+          "returns": "BOOLEAN",
+          "description": "Checks if the item can be used",
+          "args": [
+            {
+              "label": "Item",
+              "name": "item",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "UseItem",
+          "description": "Uses an item",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Item",
+              "name": "item",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "Kick",
+          "description": "Kicks an player",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Reason",
+              "name": "reason",
+              "type": "STRING"
+            },
+            {
+              "label": "SetKickReason",
+              "name": "setkickreason",
+              "type": "FUNCTION"
+            },
+            {
+              "label": "Deferrals",
+              "name": "deferrals",
+              "type": "DEFERRALS"
+            }
+          ]
+        },
+        {
+          "name": "IsWhitelisted",
+          "returns": "BOOLEAN",
+          "description": "Checks if the player is whitelisted",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "AddPermission",
+          "description": "Adds permissions to a player",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Permission",
+              "name": "permission",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "RemovePermission",
+          "description": "Removes permissions from a player",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Permission",
+              "name": "permission",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "HasPermission",
+          "returns": "BOOLEAN",
+          "description": "Checks if a player has the given permission",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Permission",
+              "name": "permission",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "GetPermission",
+          "returns": "ARRAY",
+          "description": "Gets the permissions for a player",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "IsOptin",
+          "returns": "BOOLEAN",
+          "description": "Returns if a player allows admin reports",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "ToggleOptin",
+          "description": "Toggles admin reports for a player",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "IsPlayerBanned",
+          "returns": "BOOLEAN",
+          "description": "Returns if the player is banned or not",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "IsLicenseInUse",
+          "returns": "BOOLEAN",
+          "description": "Checks if a player already exists with the given license",
+          "args": [
+            {
+              "label": "License",
+              "name": "license",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "HasItem",
+          "returns": "BOOLEAN",
+          "description": "Checks if a player has the given item",
+          "args": [
+            {
+              "label": "Source",
+              "name": "source",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Items",
+              "name": "items",
+              "type": "ARRAY"
+            },
+            {
+              "label": "Amounts",
+              "name": "amounts",
+              "type": "ARRAY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PlayerFunctions",
+      "prefix": "QBCore.Player.",
+      "list": [
+        {
+          "name": "RandomStr",
+          "returns": "STRING",
+          "description": "Returns a random string from the given length",
+          "args": [
+            {
+              "label": "Length",
+              "name": "length",
+              "type": "NUMBER"
             }
           ]
         }
