@@ -1,0 +1,28 @@
+{
+  "name": "jetbrains-qbcore",
+  "version": "1.0.0",
+  "description": "Auto completion for Jetbrains with qbcore fivem",
+  "main": "./src/main.js",
+  "scripts": {
+    "build": "node ./src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Z3rio/jetbrains-qbcore.git"
+  },
+  "keywords": [
+    "javascript",
+    "fivem",
+    "qbcore",
+    "completion",
+    "jetbrains",
+    "fivem-platform",
+    "natives"
+  ],
+  "author": "Zerio#0880",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Z3rio/jetbrains-qbcore/issues"
+  },
+  "homepage": "https://github.com/Z3rio/jetbrains-qbcore#readme"
+}
