@@ -1,7 +1,7 @@
 {
+  "imports": "QBCore = {}\nQBCore.Functions = {}\nQBCore.Shared = {}\nPlayer = {}\nPlayer.Functions = {}\nPlayer.PlayerData = {source=0,license='',cid=1,optin=false,name='', job={name='',label='',onduty=false,type='',grade={name='',level=0,payment=0,isboss=false}}, gang={name='',label='',grade={name='',level=0,isboss=false}}, metadata={hunger=0,thirst=0,stress=0,isdead=false,inlaststand=false,armor=0,ishandcuffed=false,tracker=false,injail=false,jailitems={},status={},phone={},fitbit={},commandbinds={},bloodtype=0,dealerrep=0,craftingrep=0,attachmentcraftingrep=0,currentapartment='',jobrep={tow=0,trucker=0,taxi=0,hotdog=0},callsign='',fingerprint='',walletid='',criminalrecord={hasRecord=false,date=''},licenses={driver=false,business=false,weapon=false},inside={house='',apartment={apartmentType='',apartmentId=''}},phonedata={SerialNumber='',InstalledApps={}},position={},items={}}, money={bank=0,cash=0}, charinfo={firstname='',lastname='',birthdate='',gender=0,backstory='',nationality='',phone=0,account=''}}",
   "functions": [
     {
-      "imports": "QBCore = {}",
       "name": "Main",
       "prefix": "QBCore.",
       "list": [
@@ -24,7 +24,6 @@
       ]
     },
     {
-      "imports": "QBCore = {Functions={}}",
       "name": "Functions",
       "prefix": "QBCore.Functions.",
       "list": [
@@ -1322,7 +1321,6 @@
       ]
     },
     {
-      "imports": "QBCore={Shared={}}",
       "name": "SharedFunctions",
       "prefix": "QBCore.Shared.",
       "list": [
@@ -1448,7 +1446,6 @@
       ]
     },
     {
-      "imports": "local Player = {\nFunctions = {}\nPlayer.PlayerData = {source=0,license='',cid=1,optin=false,name='', job={name='',label='',onduty=false,type='',grade={name='',level=0,payment=0,isboss=false}}, gang={name='',label='',grade={name='',level=0,isboss=false}}, metadata={hunger=0,thirst=0,stress=0,isdead=false,inlaststand=false,armor=0,ishandcuffed=false,tracker=false,injail=false,jailitems={},status={},phone={},fitbit={},commandbinds={},bloodtype=0,dealerrep=0,craftingrep=0,attachmentcraftingrep=0,currentapartment='',jobrep={tow=0,trucker=0,taxi=0,hotdog=0},callsign='',fingerprint='',walletid='',criminalrecord={hasRecord=false,date=''},licenses={driver=false,business=false,weapon=false},inside={house='',apartment={apartmentType='',apartmentId=''}},phonedata={SerialNumber='',InstalledApps={}},position={},items={}}, money={bank=0,cash=0}, charinfo={firstname='',lastname='',birthdate='',gender=0,backstory='',nationality='',phone=0,account=''}}\n}",
       "name": "PlayerFunctions",
       "prefix": "QBCore.Player.",
       "list": []

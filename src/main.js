@@ -21,11 +21,11 @@ let response = await fetch(
 });
 
 let data = JSON.parse(await response.text());
+let string = data.imports + "\n";
 
 // Create auto-completion data files
 for (let i = 0; i < data.functions.length; i++) {
   let currentSection = data.functions[i];
-  let string = currentSection.imports + "\n";
 
   for (let i2 = 0; i2 < currentSection.list.length; i2++) {
     const currentFunction = currentSection.list[i2];
@@ -33,7 +33,7 @@ for (let i = 0; i < data.functions.length; i++) {
     // Create usage string
     let usage = `${
       currentFunction.returns !== undefined ? currentFunction.returns : "VOID"
-    } ${currentSection.prefix}${currentFunction.name}`;
+    } ${currentSection.prefix} ${currentFunction.name}`;
     let func = "function " + currentSection.prefix + currentFunction.name;
     let params = "";
     if (currentFunction.args == undefined || currentFunction.args.length == 0) {
@@ -72,10 +72,11 @@ for (let i = 0; i < data.functions.length; i++) {
       currentFunction.returns !== undefined ? currentFunction.returns : "VOID"
     }\n${func}\n\n`;
   }
-
-  // Create auto-completion instruction file
-  fs.appendFile(`./build/${currentSection.name}.lua`, string, function (err) {
-    if (err) throw err;
-    console.log(`Saved ${currentSection.name}.lua`);
-  });
+  string += "\n";
 }
+
+// Create main file
+fs.appendFile("./build/Main.lua", string, function (err) {
+  if (err) throw err;
+  console.log("Saved Main.lua");
+});
