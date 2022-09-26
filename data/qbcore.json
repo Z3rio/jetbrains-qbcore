@@ -3,6 +3,7 @@
     "name": "ClientFunctions",
     "list": [
       {
+        "name": "GetPlayerData",
         "description": "Get the player data",
         "return": "PlayerData",
         "args": []
