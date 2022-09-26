@@ -1,12 +1,12 @@
 [
   {
     "name": "ClientFunctions",
-    "list": {
-      [
+    "list": [
+      {
         "description": "Get the player data",
         "return": "PlayerData",
         "args": []
-      ]
-    }
+      }
+    ]
   }
 ]
