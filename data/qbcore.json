@@ -1,6 +1,7 @@
 [
   {
     "name": "ClientFunctions",
+    "prefix": "QBCore.Functions.",
     "list": [
       {
         "name": "GetPlayerData",
