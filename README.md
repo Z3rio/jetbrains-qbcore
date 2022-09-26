@@ -1,3 +1,4 @@
+![Thumbnail](https://user-images.githubusercontent.com/54480523/192335576-6f39af0c-21f8-43e7-91e7-c7f6e31a40ac.png)
 # Jetbrains QBCore FiveM Addon
 ![Javascript](https://badges.frapsoft.com/javascript/code/javascript.png)
 ![License](https://img.shields.io/github/license/Z3rio/jetbrains-qbcore.svg)
