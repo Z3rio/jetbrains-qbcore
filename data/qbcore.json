@@ -9,6 +9,17 @@
         "description": "Get the player data",
         "returns": "ARRAY",
         "args": []
+      },
+      {
+        "name": "GetCoords",
+        "description": "Get the coords of an entity",
+        "returns": "VECTOR3",
+        "args": [
+          {
+            "label": "Entity",
+            "type": "entity"
+          }
+        ]
       }
     ]
   }
