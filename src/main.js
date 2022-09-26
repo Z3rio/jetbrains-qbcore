@@ -33,7 +33,7 @@ for (let i = 0; i < data.functions.length; i++) {
     // Create usage string
     let usage = `${
       currentFunction.returns !== undefined ? currentFunction.returns : "VOID"
-    } ${currentSection.prefix} ${currentFunction.name}`;
+    } ${currentSection.prefix}${currentFunction.name}`;
     let func = "function " + currentSection.prefix + currentFunction.name;
     let params = "";
     if (currentFunction.args == undefined || currentFunction.args.length == 0) {
@@ -49,6 +49,7 @@ for (let i = 0; i < data.functions.length; i++) {
         if (i3 !== 0) {
           args += ", ";
           args2 += ", ";
+          params += "\n";
         }
         params += `--@params ${arg.name} ${arg.type}`;
         args += arg.name;
@@ -56,7 +57,7 @@ for (let i = 0; i < data.functions.length; i++) {
       }
 
       usage = `${usage}(${args2})`;
-      func += "(" + args + ")";
+      func += "(" + args + ") end";
     }
 
     // Create actual function instruction string
@@ -68,9 +69,11 @@ for (let i = 0; i < data.functions.length; i++) {
       currentSection.prefix
     }${currentFunction.name}\n--@usage ${usage}\n${
       params !== "" ? params + "\n" : ""
-    }--@return ${
-      currentFunction.returns !== undefined ? currentFunction.returns : "VOID"
-    }\n${func}\n\n`;
+    }${
+      currentFunction.returns !== undefined
+        ? "--@return " + currentFunction.returns + "\n"
+        : ""
+    }${func}\n\n`;
   }
   string += "\n";
 }
