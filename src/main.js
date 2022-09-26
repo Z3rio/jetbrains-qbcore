@@ -31,13 +31,15 @@ fs.appendFile("./build/Main.lua", data.imports, function (err) {
 // Create auto-completion data files
 for (let i = 0; i < data.functions.length; i++) {
   let currentSection = data.functions[i];
-  let string = "\n";
+  let string = currentSection.imports + "\n";
 
   for (let i2 = 0; i2 < currentSection.list.length; i2++) {
     const currentFunction = currentSection.list[i2];
 
     // Create usage string
-    let usage = currentSection.prefix + currentFunction.name;
+    let usage = `${
+      currentFunction.returns !== undefined ? currentFunction.returns : "VOID"
+    } ${currentSection.prefix}${currentFunction.name}`;
     let func = "function " + currentSection.prefix + currentFunction.name;
     let params = "";
     if (currentFunction.args == undefined || currentFunction.args.length == 0) {
@@ -59,9 +61,7 @@ for (let i = 0; i < data.functions.length; i++) {
         args2 += arg.type + " " + arg.label;
       }
 
-      usage = `${
-        currentFunction.returns !== undefined ? currentFunction.returns : "VOID"
-      } ${usage}(${args2})`;
+      usage = `${usage}(${args2})`;
       func += "(" + args + ")";
     }
 
