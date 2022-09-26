@@ -2,7 +2,7 @@
   "imports": "QBCore = {}\nQBCore.Functions = {}\nQBCore.Shared = {}\nPlayer = {}\nPlayer.Functions = {}\nPlayer.PlayerData = {source=0,license='',cid=1,optin=false,name='', job={name='',label='',onduty=false,type='',grade={name='',level=0,payment=0,isboss=false}}, gang={name='',label='',grade={name='',level=0,isboss=false}}, metadata={hunger=0,thirst=0,stress=0,isdead=false,inlaststand=false,armor=0,ishandcuffed=false,tracker=false,injail=false,jailitems={},status={},phone={},fitbit={},commandbinds={},bloodtype=0,dealerrep=0,craftingrep=0,attachmentcraftingrep=0,currentapartment='',jobrep={tow=0,trucker=0,taxi=0,hotdog=0},callsign='',fingerprint='',walletid='',criminalrecord={hasRecord=false,date=''},licenses={driver=false,business=false,weapon=false},inside={house='',apartment={apartmentType='',apartmentId=''}},phonedata={SerialNumber='',InstalledApps={}},position={},items={}}, money={bank=0,cash=0}, charinfo={firstname='',lastname='',birthdate='',gender=0,backstory='',nationality='',phone=0,account=''}}",
   "functions": [
     {
-      "name": "ClientFunctions",
+      "name": "Main",
       "prefix": "QBCore.",
       "list": [
         {
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "name": "ClientFunctions2",
+      "name": "Functions",
       "prefix": "QBCore.Functions.",
       "list": [
         {
@@ -794,138 +794,7 @@
               "type": "VECTOR3"
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "SharedFunctions",
-      "prefix": "QBCore.Shared.",
-      "list": [
-        {
-          "name": "RandomStr",
-          "returns": "STRING",
-          "description": "Returns a random string from the given length",
-          "args": [
-            {
-              "label": "Length",
-              "name": "length",
-              "type": "NUMBER"
-            }
-          ]
         },
-        {
-          "name": "RandomInt",
-          "returns": "NUMBER",
-          "description": "Returns a random number from the given length",
-          "args": [
-            {
-              "label": "Length",
-              "name": "length",
-              "type": "NUMBER"
-            }
-          ]
-        },
-        {
-          "name": "SplitStr",
-          "description": "Splits a string",
-          "returns": "ARRAY",
-          "args": [
-            {
-              "label": "Text",
-              "name": "text",
-              "type": "STRING"
-            },
-            {
-              "label": "Delimiter",
-              "name": "delimiter",
-              "type": "STRING"
-            }
-          ]
-        },
-        {
-          "name": "Trim",
-          "returns": "STRING",
-          "description": "Returns the string but without special characters",
-          "args": [
-            {
-              "label": "Text",
-              "name": "text",
-              "type": "STRING"
-            }
-          ]
-        },
-        {
-          "name": "FirstToUpper",
-          "returns": "STRING",
-          "description": "Makes the first letter in the string uppercase",
-          "args": [
-            {
-              "label": "Text",
-              "name": "text",
-              "type": "STRING"
-            }
-          ]
-        },
-        {
-          "name": "Round",
-          "returns": "NUMBER",
-          "description": "Returns a rounded version of the given number with the given amount of decimals",
-          "args": [
-            {
-              "label": "Number",
-              "name": "number",
-              "type": "NUMBER"
-            },
-            {
-              "label": "DecimalAmount",
-              "name": "decimalamount",
-              "type": "NUMBER"
-            }
-          ]
-        },
-        {
-          "name": "ChangeVehicleExtra",
-          "description": "Changes the extra value of a vehicle",
-          "args": [
-            {
-              "label": "Vehicle",
-              "name": "vehicle",
-              "type": "ENTITY"
-            },
-            {
-              "label": "Extra",
-              "name": "extra",
-              "type": "NUMBER"
-            },
-            {
-              "label": "Toggled",
-              "name": "toggled",
-              "type": "BOOLEAN"
-            }
-          ]
-        },
-        {
-          "name": "SetDefaultVehicleExtras",
-          "description": "Sets all the vehicle extras back to default",
-          "args": [
-            {
-              "label": "Vehicle",
-              "name": "vehicle",
-              "type": "ENTITY"
-            },
-            {
-              "label": "Config",
-              "name": "config",
-              "type": "ARRAY"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "ServerFunctions",
-      "prefix": "QBCore.Functions.",
-      "list": [
         {
           "name": "GetCoords",
           "returns": "VECTOR4",
@@ -1445,6 +1314,131 @@
             {
               "label": "Amounts",
               "name": "amounts",
+              "type": "ARRAY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SharedFunctions",
+      "prefix": "QBCore.Shared.",
+      "list": [
+        {
+          "name": "RandomStr",
+          "returns": "STRING",
+          "description": "Returns a random string from the given length",
+          "args": [
+            {
+              "label": "Length",
+              "name": "length",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "RandomInt",
+          "returns": "NUMBER",
+          "description": "Returns a random number from the given length",
+          "args": [
+            {
+              "label": "Length",
+              "name": "length",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "SplitStr",
+          "description": "Splits a string",
+          "returns": "ARRAY",
+          "args": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            },
+            {
+              "label": "Delimiter",
+              "name": "delimiter",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "Trim",
+          "returns": "STRING",
+          "description": "Returns the string but without special characters",
+          "args": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "FirstToUpper",
+          "returns": "STRING",
+          "description": "Makes the first letter in the string uppercase",
+          "args": [
+            {
+              "label": "Text",
+              "name": "text",
+              "type": "STRING"
+            }
+          ]
+        },
+        {
+          "name": "Round",
+          "returns": "NUMBER",
+          "description": "Returns a rounded version of the given number with the given amount of decimals",
+          "args": [
+            {
+              "label": "Number",
+              "name": "number",
+              "type": "NUMBER"
+            },
+            {
+              "label": "DecimalAmount",
+              "name": "decimalamount",
+              "type": "NUMBER"
+            }
+          ]
+        },
+        {
+          "name": "ChangeVehicleExtra",
+          "description": "Changes the extra value of a vehicle",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            },
+            {
+              "label": "Extra",
+              "name": "extra",
+              "type": "NUMBER"
+            },
+            {
+              "label": "Toggled",
+              "name": "toggled",
+              "type": "BOOLEAN"
+            }
+          ]
+        },
+        {
+          "name": "SetDefaultVehicleExtras",
+          "description": "Sets all the vehicle extras back to default",
+          "args": [
+            {
+              "label": "Vehicle",
+              "name": "vehicle",
+              "type": "ENTITY"
+            },
+            {
+              "label": "Config",
+              "name": "config",
               "type": "ARRAY"
             }
           ]

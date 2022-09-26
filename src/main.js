@@ -31,7 +31,7 @@ fs.appendFile("./build/Main.lua", data.imports, function (err) {
 // Create auto-completion data files
 for (let i = 0; i < data.functions.length; i++) {
   let currentSection = data.functions[i];
-  let string = currentSection.imports + "\n";
+  let string = "\n";
 
   for (let i2 = 0; i2 < currentSection.list.length; i2++) {
     const currentFunction = currentSection.list[i2];
