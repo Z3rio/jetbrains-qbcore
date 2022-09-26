@@ -22,12 +22,6 @@ let response = await fetch(
 
 let data = JSON.parse(await response.text());
 
-// Create main initialization file
-fs.appendFile("./build/Main.lua", data.imports, function (err) {
-  if (err) throw err;
-  console.log("Saved Main.lua");
-});
-
 // Create auto-completion data files
 for (let i = 0; i < data.functions.length; i++) {
   let currentSection = data.functions[i];

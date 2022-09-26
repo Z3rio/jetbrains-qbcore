@@ -1,7 +1,7 @@
 {
   "functions": [
     {
-      "imports": "local QBCore = {}",
+      "imports": "QBCore = {}",
       "name": "Main",
       "prefix": "QBCore.",
       "list": [
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "imports": "local QBCore = {Functions={}}",
+      "imports": "QBCore = {Functions={}}",
       "name": "Functions",
       "prefix": "QBCore.Functions.",
       "list": [
@@ -1322,7 +1322,7 @@
       ]
     },
     {
-      "imports": "local QBCore={Shared={}}",
+      "imports": "QBCore={Shared={}}",
       "name": "SharedFunctions",
       "prefix": "QBCore.Shared.",
       "list": [
