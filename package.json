@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Z3rio/jetbrains-qbcore.git"
   },
+  "type": "module",
   "keywords": [
     "javascript",
     "fivem",
@@ -26,7 +27,9 @@
   },
   "homepage": "https://github.com/Z3rio/jetbrains-qbcore#readme",
   "dependencies": {
+    "fetch": "^1.1.0",
     "fs-extra": "^10.1.0",
+    "node-fetch": "^3.2.10",
     "request": "^2.88.2"
   }
 }

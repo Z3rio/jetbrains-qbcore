@@ -2,6 +2,7 @@
   {
     "name": "ClientFunctions",
     "prefix": "QBCore.Functions.",
+    "imports": "QBCore = {}\nQBCore.Functions = {}",
     "list": [
       {
         "name": "GetPlayerData",
