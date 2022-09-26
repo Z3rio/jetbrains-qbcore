@@ -39,6 +39,7 @@ for (let i = 0; i < data.functions.length; i++) {
     // Create usage string
     let usage = currentSection.prefix + currentFunction.name;
     let func = "function " + currentSection.prefix + currentFunction.name;
+    let params = "";
     if (currentFunction.args == undefined || currentFunction.args.length == 0) {
       usage += "()";
       func += "() end";
@@ -53,11 +54,14 @@ for (let i = 0; i < data.functions.length; i++) {
           args += ", ";
           args2 += ", ";
         }
+        params += `--@params ${arg.name} ${arg.type}`;
         args += arg.name;
         args2 += arg.type + " " + arg.label;
       }
 
-      usage = `${currentFunction.returns} ${usage}(${args2})`;
+      usage = `${
+        currentFunction.returns !== undefined ? currentFunction.returns : "VOID"
+      } ${usage}(${args2})`;
       func += "(" + args + ")";
     }
 
@@ -68,8 +72,10 @@ for (let i = 0; i < data.functions.length; i++) {
         : ""
     }--@module QBFUNCTION\n--@submodule ${currentSection.name}\n--@see ${
       currentSection.prefix
-    }${currentFunction.name}\n--@usage ${usage}\n--@return ${
-      currentFunction.returns
+    }${currentFunction.name}\n--@usage ${usage}\n${
+      params !== "" ? params + "\n" : ""
+    }--@return ${
+      currentFunction.returns !== undefined ? currentFunction.returns : "VOID"
     }\n${func}\n\n`;
   }
 
