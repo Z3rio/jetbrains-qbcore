@@ -1,27 +1,29 @@
-[
-  {
-    "name": "ClientFunctions",
-    "prefix": "QBCore.Functions.",
-    "imports": "QBCore = {}\nQBCore.Functions = {}",
-    "list": [
-      {
-        "name": "GetPlayerData",
-        "description": "Get the player data",
-        "returns": "ARRAY",
-        "args": []
-      },
-      {
-        "name": "GetCoords",
-        "description": "Get the coords of an entity",
-        "returns": "VECTOR3",
-        "args": [
-          {
-            "label": "Entity",
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    ]
-  }
-]
+{
+  "imports": "QBCore = {}\nQBCore.Functions = {}",
+  "functions": [
+    {
+      "name": "ClientFunctions",
+      "prefix": "QBCore.Functions.",
+      "list": [
+        {
+          "name": "GetPlayerData",
+          "description": "Get the player data",
+          "returns": "ARRAY",
+          "args": []
+        },
+        {
+          "name": "GetCoords",
+          "description": "Get the coords of an entity",
+          "returns": "VECTOR3",
+          "args": [
+            {
+              "label": "Entity",
+              "name": "entity",
+              "type": "entity"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

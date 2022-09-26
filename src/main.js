@@ -7,16 +7,8 @@ import fetch from "node-fetch";
 // Setup build directory
 if (!fs.existsSync("./build")) {
   fs.mkdirSync("./build");
-}
-
-if (!fs.existsSync("./build/zerio-intellij")) {
-  fs.mkdirSync("./build/zerio-intellij");
-}
-
-if (!fs.existsSync("./build/zerio-intellij/QBCore")) {
-  fs.mkdirSync("./build/zerio-intellij/QBCore");
 } else {
-  fsExtra.emptyDirSync("./build/zerio-intellij/QBCore");
+  fsExtra.emptyDirSync("./build");
 }
 
 // Get JSON data
@@ -30,9 +22,15 @@ let response = await fetch(
 
 let data = JSON.parse(await response.text());
 
+// Create main initialization file
+fs.appendFile("./build/Main.lua", data.imports, function (err) {
+  if (err) throw err;
+  console.log("Saved Main.lua");
+});
+
 // Create auto-completion data files
-for (let i = 0; i < data.length; i++) {
-  let currentSection = data[i];
+for (let i = 0; i < data.functions.length; i++) {
+  let currentSection = data.functions[i];
   let string = currentSection.imports + "\n";
 
   for (let i2 = 0; i2 < currentSection.list.length; i2++) {
@@ -76,12 +74,8 @@ for (let i = 0; i < data.length; i++) {
   }
 
   // Create auto-completion instruction file
-  fs.appendFile(
-    `./build/zerio-intellij/QBCore/${currentSection.name}.lua`,
-    string,
-    function (err) {
-      if (err) throw err;
-      console.log(`Saved ${currentSection.name}.lua`);
-    }
-  );
+  fs.appendFile(`./build/${currentSection.name}.lua`, string, function (err) {
+    if (err) throw err;
+    console.log(`Saved ${currentSection.name}.lua`);
+  });
 }
